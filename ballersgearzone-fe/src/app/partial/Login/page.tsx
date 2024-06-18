@@ -6,8 +6,8 @@ import Login from './login.model';
 
 export default function Home() {
   const router = useRouter();
-  const aregister = () => {
-    router.push('Register')
+  const navegarARegister = () => {
+    router.push("/")
   }
 
   const validate = (values: Login) => {
@@ -40,7 +40,7 @@ export default function Home() {
       >
         {formik => (
           <Form>
-            <h1 className='titulo'>Registrarse</h1> 
+            <h1 className='titulo'>Iniciar Sesion</h1> 
             <label htmlFor="email">Correo Electronico</label>
             <Field
               id="email"
@@ -60,7 +60,10 @@ export default function Home() {
             <ErrorMessage name="contraseña" component="div" />
 
             <button type="submit">Ingresar</button>
-
+            <div>
+              <button onClick={() => navegarARegister()} type='button' className="link">Registrarse</button>
+            </div>
+            
           </Form>
         )}
       </Formik>

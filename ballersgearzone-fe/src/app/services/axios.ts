@@ -1,7 +1,7 @@
 "use client"
 import axios from 'axios';
 const createCliente = () => {
-    const cliente = axios.create({ baseURL: 'http://localhost:8000/', });
+    const cliente = axios.create({ baseURL: 'http://localhost:8080/', });
     return cliente;
 }
 

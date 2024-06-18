@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 export default function Home() {
   const router = useRouter();   
   const aregister = () => {
-    router.push('Register')
+    router.push('Login')
   }
   const validate = (values: Register) => {
     const errors: Partial<Register> = {};
