@@ -6,6 +6,7 @@ export const login = async (login: Login, router: any) => {
         const response = await clienteAxios.post('/login', login);
         console.log(response);
         }
-    } catch (error) {
+     catch (error) {
         console.log (error)
     }
+}
