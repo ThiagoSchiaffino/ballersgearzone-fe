@@ -12,10 +12,10 @@ export async function login(body: { email: string; contrasenia: string }):Promis
   }
 }
 
-export async function signUp(body: { email: string; password: string }):Promise<boolean> {
+export async function register(body: { firstname: string; edad: number; email: string; telefono:number; contasenia: string }):Promise<boolean> {
   try {
     const response = await clienteAxios.post("/register", body );
-    return true;
+    return response.data;
   } catch (e) {
     return false;
   }

@@ -40,10 +40,10 @@ export default function Home() {
             const respuesta = await login (body);
             console.log(respuesta);
             if (respuesta.rolID == 1){
-              router.push("")
+              router.push("/administrador")
             }
             else {
-              router.push("")
+              router.push("/usuario")
               }
           } catch (error) {
             // informar al usuario contraseña incorrecta
