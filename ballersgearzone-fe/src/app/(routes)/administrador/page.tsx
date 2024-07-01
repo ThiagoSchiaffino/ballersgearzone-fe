@@ -24,7 +24,7 @@ export default function Home() {
             {producto.descripcion}
           </p>
           <h2>$15000</h2>
-          <a href="#" className="btn btn-primary">Ir al Carrito</a>
+
           
         
         </div>
