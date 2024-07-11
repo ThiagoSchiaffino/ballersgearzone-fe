@@ -3,6 +3,7 @@ import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import Register from './partial/register.model';
 import { useRouter } from 'next/navigation';
+import { register } from './services/auth';
 
 
 export default function Home() {
@@ -31,15 +32,15 @@ export default function Home() {
     }
 
     if (!values.telefono) {
-      errors.telefono = 'Se requiere un numero de telefono';
+     errors.telefono = 'Se requiere un numero de telefono';
     } else if (values.telefono.toString().length !== 10) {
       errors.telefono = 'Debe tener 10 dígitos';
     }
 
-    if (!values.contraseña) {
-      errors.contraseña = 'La contraseña es requerida';
-    } else if (values.contraseña.length < 5) {
-      errors.contraseña = 'Debe tener al menos 5 caracteres';
+    if (!values.password) {
+      errors.password = 'La contraseña es requerida';
+    } else if (values.password.length < 5) {
+      errors.password = 'Debe tener al menos 5 caracteres';
     }
     return errors;
   };
@@ -48,9 +49,10 @@ export default function Home() {
    <>
    <div className='title'>Ballers Gear Zone</div>
     <Formik
-      initialValues={{ firstName: '', edad: 0, email: '', telefono: +54, contraseña: ''}}
+      initialValues={{ firstName: '', edad: 0, email: '', telefono: +54, password: ''}}
       validate={validate}
-      onSubmit={(values, actions) => {
+      onSubmit={ async (values, actions) => {
+        await register (values)
         console.log(values); // Aquí es donde los valores aparecerán en la consola
         actions.setSubmitting(false); // Para terminar la operación de envío
       }}
@@ -102,16 +104,16 @@ export default function Home() {
             />
             {formik.errors.telefono ? <div>{formik.errors.telefono}</div> : null}
 
-            <label htmlFor="contraseña">Contraseña</label>
+            <label htmlFor="password">Contraseña</label>
           <input
-            id="contraseña"
-            name="contraseña"
+            id="password"
+            name="password"
             type="string"
             placeholder='Contraseña'
             onChange={formik.handleChange}
-            value={formik.values.contraseña}
+            value={formik.values.password}
             />
-            {formik.errors.contraseña ? <div>{formik.errors.contraseña}</div> : null}
+            {formik.errors.password ? <div>{formik.errors.password}</div> : null}
 
           <button type="submit">Ingresar</button>
           <button type="button" onClick={aregister}>

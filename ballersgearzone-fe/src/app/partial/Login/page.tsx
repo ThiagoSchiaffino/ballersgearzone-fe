@@ -39,10 +39,12 @@ export default function Home() {
           try {
             const respuesta = await login (body);
             console.log(respuesta);
+            console.log(respuesta.rolID);
             if (respuesta.rolID == 1){
               router.push("/administrador")
             }
-            else {
+            else if(respuesta.rolID == 2)
+              {
               router.push("/usuario")
               }
           } catch (error) {
