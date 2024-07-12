@@ -12,7 +12,7 @@ export default function Home() {
     router.push('Login')
   }
   const validate = (values: Register) => {
-    const errors: Partial<Register> = {};
+    const errors: Partial<{firstName : string, edad: string, email: string, telefono: string, password: string}> = {};
     if (!values.firstName) {
       errors.firstName = 'Nombre requerido';
     } else if (values.firstName.length > 15) {
@@ -39,8 +39,8 @@ export default function Home() {
 
     if (!values.password) {
       errors.password = 'La contraseña es requerida';
-    } else if (values.password.length < 5) {
-      errors.password = 'Debe tener al menos 5 caracteres';
+    } else if (values.password.length < 4) {
+      errors.password = 'Debe tener al menos 4 caracteres';
     }
     return errors;
   };
@@ -53,6 +53,11 @@ export default function Home() {
       validate={validate}
       onSubmit={ async (values, actions) => {
         await register (values)
+        
+  const navegarAUsuario = () => {
+    router.push("/usuario")
+  }
+navegarAUsuario()
         console.log(values); // Aquí es donde los valores aparecerán en la consola
         actions.setSubmitting(false); // Para terminar la operación de envío
       }}
@@ -115,7 +120,7 @@ export default function Home() {
             />
             {formik.errors.password ? <div>{formik.errors.password}</div> : null}
 
-          <button type="submit">Ingresar</button>
+          <button type="submit" >Ingresar</button>
           <button type="button" onClick={aregister}>
       Iniciar Sesion
     </button>

@@ -17,7 +17,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}
+        <footer style={{ backgroundColor: '#333', color: 'white', padding: '20px', marginTop:'100px', width:"100%", height:"350px"}}>
+          <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+            {/* Contacto */}
+            <div style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
+              <h3 style={{ marginBottom: '10px' }}>Contacto</h3>
+              <p>Email: info@tucamiseta.com</p>
+              <p>Teléfono: +123 456 7890</p>
+              <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+            </div>
+
+            {/* Información */}
+            <div style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
+              <h3 style={{ marginBottom: '10px' }}>Información</h3>
+              <ul style={{ listStyleType: 'none', padding: 0 }}>
+                <li><a href="/sobre-nosotros" style={{ color: 'white', textDecoration: 'none' }}>Sobre Nosotros</a></li>
+                <li><a href="/envios" style={{ color: 'white', textDecoration: 'none' }}>Envíos</a></li>
+                <li><a href="/devoluciones" style={{ color: 'white', textDecoration: 'none' }}>Devoluciones</a></li>
+                <li><a href="/politica-privacidad" style={{ color: 'white', textDecoration: 'none' }}>Política de Privacidad</a></li>
+                <li><a href="/terminos-condiciones" style={{ color: 'white', textDecoration: 'none' }}>Términos y Condiciones</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <p>&copy; 2024 TuCamiseta. Todos los derechos reservados.</p>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
