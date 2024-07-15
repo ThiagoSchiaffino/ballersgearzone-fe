@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,7 +17,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}
+        <footer style={{ backgroundColor: '#333', color: 'white', padding: '20px', marginTop:'100px', width:"100%", height:"350px"}}>
+          <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+            {/* Contacto */}
+            <div style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
+              <h3 style={{ marginBottom: '10px' }}>Contacto</h3>
+              <p>Email: ballersgearzone@gmail.com</p>
+              <p>Teléfono: 2284575131</p>
+              <p>Localidad: Olavarria</p>
+              <p>Dirección: Velez Sarsfield 3831</p>
+              <p>Instagram: Ballersgearzoneolav</p>
+            </div>
+
+            {/* Información */}
+            <div style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
+              <h3 style={{ marginBottom: '10px' }}>Información</h3>
+              <ul style={{ listStyleType: 'none', padding: 0 }}>
+                <li><a href="/sobre-nosotros" style={{ color: 'white', textDecoration: 'none' }}>Sobre Nosotros: Unica Pagina de Venta de Camisetas NBA en Olavarria</a></li>
+                <li><a href="/envios" style={{ color: 'white', textDecoration: 'none' }}>Envíos a todo el país</a></li>
+                <li><a href="/politica-privacidad" style={{ color: 'white', textDecoration: 'none' }}>Política de Privacidad</a></li>
+                <li><a href="/terminos-condiciones" style={{ color: 'white', textDecoration: 'none' }}>Términos y Condiciones</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <p>&copy; 2024 Ballersgearzone. Todos los derechos reservados.</p>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }

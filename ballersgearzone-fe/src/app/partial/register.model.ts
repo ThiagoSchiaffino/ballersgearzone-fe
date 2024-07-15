@@ -3,7 +3,7 @@ interface Register {
     edad: number;
     email: string;
     telefono: number;
-    contraseña: string;
+    password: string;
   }
   
   export default Register

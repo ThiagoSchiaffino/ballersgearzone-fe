@@ -3,11 +3,12 @@ import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useRouter } from 'next/navigation';
 import Login from './login.model';
+import {login} from '../../services/auth';
 
 export default function Home() {
   const router = useRouter();
-  const aregister = () => {
-    router.push('Register')
+  const navegarARegister = () => {
+    router.push("/")
   }
 
   const validate = (values: Login) => {
@@ -19,10 +20,10 @@ export default function Home() {
       errors.email = 'Dirección de correo invalida';
     }
 
-    if (!values.contraseña) {
-      errors.contraseña = 'La contraseña es requerida';
-    } else if (values.contraseña.length < 5) {
-      errors.contraseña = 'Debe tener al menos 5 caracteres';
+    if (!values.contrasenia) {
+      errors.contrasenia = 'La contraseña es requerida';
+    } else if (values.contrasenia.length < 5) {
+      errors.contrasenia = 'Debe tener al menos 5 caracteres';
     }
     return errors;
   };
@@ -31,16 +32,31 @@ export default function Home() {
     <>
       <div className='title'>Ballers Gear Zone</div>
       <Formik
-        initialValues={{ email: '', contraseña: '' }}
+        initialValues={{ email: '', contrasenia: '' }}
         validate={validate}
-        onSubmit={(values, actions) => {
-          console.log(values);
+        onSubmit={async (body, actions) => {
+          console.log(body);
+          try {
+            const respuesta = await login (body);
+            console.log(respuesta);
+            console.log(respuesta.rolID);
+            if (respuesta.rolID == 1){
+              router.push("/administrador")
+            }
+            else if(respuesta.rolID == 2)
+              {
+              router.push("/usuario")
+              }
+          } catch (error) {
+            // informar al usuario contraseña incorrecta
+            console.log(error);
+          }
           actions.setSubmitting(false); 
         }}
       >
         {formik => (
           <Form>
-            <h1 className='titulo'>Registrarse</h1> 
+            <h1 className='titulo'>Iniciar Sesion</h1> 
             <label htmlFor="email">Correo Electronico</label>
             <Field
               id="email"
@@ -52,15 +68,18 @@ export default function Home() {
 
             <label htmlFor="contraseña">Contraseña</label>
             <Field
-              id="contraseña"
-              name="contraseña"
+              id="contrasenia"
+              name="contrasenia"
               type="password"
               placeholder='Contraseña'
             />
             <ErrorMessage name="contraseña" component="div" />
 
             <button type="submit">Ingresar</button>
-
+            <div>
+              <button onClick={() => navegarARegister()} type='button' className="link">Registrarse</button>
+            </div>
+            
           </Form>
         )}
       </Formik>
