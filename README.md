@@ -3,4 +3,6 @@
 ### Instrucciones de instalacion
 * Descargar el repositorio de Github
 * Instalar las dependencias ejecutando *npm install*
-* correr el frontend ejecutando *npm run start*
+* Correr el frontend ejecutando *npm run start*
+
+* Para más información *[TrabajoFinal2.docx]*
