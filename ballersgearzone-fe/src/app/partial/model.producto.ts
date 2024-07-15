@@ -7,6 +7,7 @@ interface Producto {
     descripcion: string;
     fotodelete: string;
     camisetade: string;
+    zona: number;
   }
   
   export default Producto
