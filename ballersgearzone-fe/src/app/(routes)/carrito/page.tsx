@@ -61,7 +61,7 @@ export default function Carrito() {
                         </div>
                         <div className="cart-summary">
                             <div className="cart-summary-header">
-                                <h5>Resumen de Compra</h5>
+                                <h5>Resumen de Compra: Camiseta NBA</h5>
                                 <hr />
                             </div>
                             <div className="row summary section-sub-total">
@@ -77,7 +77,7 @@ export default function Carrito() {
                                     <p>Impuesto</p>
                                 </div>
                                 <div className="col-4">
-                                    <p className="text-right tax-total">$0</p>
+                                    <p className="text-right tax-total">Sin impuestos</p>
                                 </div>
                             </div>
                             <div className="row section-shipping-cost">
@@ -85,7 +85,7 @@ export default function Carrito() {
                                     <p>Costo de Envío</p>
                                 </div>
                                 <div className="col-4">
-                                    <p className="text-right shipping-cost">$0</p>
+                                    <p className="text-right shipping-cost">Gratis</p>
                                 </div>
                             </div>
                             <div className="section-grand-total">
@@ -95,7 +95,7 @@ export default function Carrito() {
                                         <strong>Total</strong>
                                     </div>
                                     <div className="col-4">
-                                        <p className="text-right grand-total">${producto.descripcion}</p>
+                                        <p className="text-right grand-total">$15000{producto.descripcion}</p>
                                     </div>
                                 </div>
                                 <div className="message-tax">
