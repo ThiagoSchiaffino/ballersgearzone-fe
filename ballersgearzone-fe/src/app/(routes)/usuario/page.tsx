@@ -1,6 +1,7 @@
 "use client";
 import Producto from "@/app/partial/model.producto";
-import { producto } from "@/app/services/Producto";
+import { obtenerProducto } from "@/app/services/Producto";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 
@@ -8,20 +9,23 @@ import React, { useEffect, useState } from "react";
 export default function Home() {
   const [productosZona1, setProductosZona1] = useState<Producto[]>([]);
   const [productosZona2, setProductosZona2] = useState<Producto[]>([]);
+  const [carrito, setCarrito] = useState<Producto[]>([]);
+
   useEffect(() => {
-    producto().then((data: Producto[]) => {
+    obtenerProducto(1).then((data: Producto[]) => {
       setProductosZona1(data);
     });
-    producto().then((data: Producto[]) => {
+    obtenerProducto(2).then((data: Producto[]) => {
       setProductosZona2(data);
     });
   }, []);
-  const carrito = () => {
-    let carritoActual = JSON.parse(localStorage.getItem('carrito') || '[]');
-    if (productosZona2) {
-      carritoActual.push(productosZona2);
-    }
-    localStorage.setItem('carrito', JSON.stringify(carritoActual));
+  const agregarACarrito = (nuevoProducto: Producto) => {
+    setCarrito ([...carrito, nuevoProducto])
+    console.log(nuevoProducto)
+  }
+    
+  const irACarrito = () => {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
   };
   return (
     <>
@@ -34,14 +38,15 @@ export default function Home() {
       <div className="card">
         {productosZona1.map((producto) => (
           <a key={producto.productoId}>
-            <img src={producto.foto} className="card-img-top" alt={producto.equipo} />
+            <img src={producto.foto} className="card-img-top" height="500"alt={producto.equipo} />
             <div className="card-body">
               <h5 className="card-title">
                 {producto.equipo} {producto.camisetade}
               </h5>
               <p className="card-text">{producto.descripcion}</p>
               <h2>$15000</h2>
-              <a href="/carrito" className="btn btn-primary" onClick={carrito}>Ir al Carrito</a>
+              <Link href="/carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
+              <button className="btn btn-primary" onClick={ ()=> {agregarACarrito(producto)}}>Agregar a Carrito</button>
             </div>
           </a>
         ))}
@@ -51,17 +56,20 @@ export default function Home() {
     
       <div className="card"> 
         {productosZona2.map((producto) => (
-          <a key={producto.productoId}>
-            <img src={producto.foto} className="card-img-top" alt={producto.equipo} />
+          <div className="diseñocard">
+            <a key={producto.productoId}>
+            <img src={producto.foto} className="card-img-top" height="400" width="200" alt={producto.equipo} />
             <div className="card-body">
               <h5 className="card-title">   
                 {producto.equipo} {producto.camisetade}
               </h5>
               <p className="card-text">{producto.descripcion}</p>
               <h2>$15000</h2>
-              <a href="/carrito" className="btn btn-primary" onClick={carrito}>Ir al Carrito</a>
+              <Link href="/carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
+              <button className="btn btn-primary" onClick={ ()=> {agregarACarrito(producto)}}>Agregar a Carrito</button>
             </div>
           </a>
+          </div>
         ))}
       </div>
       </div>

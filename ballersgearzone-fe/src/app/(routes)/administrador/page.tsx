@@ -1,6 +1,6 @@
 "use client";
 import Producto from "@/app/partial/model.producto";
-import { producto } from "@/app/services/Producto";
+import {  } from "@/app/services/Producto";
 import React, { useEffect, useState } from "react";
 
 
@@ -8,14 +8,14 @@ import React, { useEffect, useState } from "react";
 export default function Home() {
   const [productosZona1, setProductosZona1] = useState<Producto[]>([]);
   const [productosZona2, setProductosZona2] = useState<Producto[]>([]);
-  useEffect(() => {
-    producto().then((data: Producto[]) => {
-      setProductosZona1(data);
-    });
-    producto().then((data: Producto[]) => {
-      setProductosZona2(data);
-    });
-})
+  //useEffect(() => {
+    //producto().then((data: Producto[]) => {
+      //setProductosZona1(data);
+    //});
+    //producto().then((data: Producto[]) => {
+      //setProductosZona2(data);
+    //});
+//})
 
   return (
     <>
@@ -61,3 +61,4 @@ export default function Home() {
   );
 }
 /*<a href="/eliminarProducto" className="btn btn-primary" onClick={eliminarProducto}>Eliminar Producto</a>*/
+/* <button className="btn btn-primary" onClick={ ()=> {eliminarProducto(productoID)}}>Agregar a Carrito</button> */
