@@ -4,6 +4,7 @@
   font-size: 45px;
   text-align: center;
   color: red;
+  font-family: cursive;
 }
 
 .titulo{
@@ -63,14 +64,46 @@ body{
 .header{
   background-color: black;
   width: 100%;
-  height: 100px;
+  height: 150px;
   color: red;
   text-align: center;
+  font-family: cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.zonaEste{
+  width: 400px;
+  text-align: center;
+  position: relative;
+  top: 50px;
+  font-family: serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.linea{
+  background-color: black;
+  height: 586px;
+  width: 3px;
+  right: 300px;
+  
+}
+
+.zonaOeste{
+  position:relative;
+  left: 1500px;
+  width: 400px;
+  text-align: center;
+  font-family: serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card{
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 570px;
  overflow: auto;
 }
 .footer{
