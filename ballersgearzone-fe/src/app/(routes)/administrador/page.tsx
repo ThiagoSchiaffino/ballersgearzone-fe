@@ -1,6 +1,6 @@
 "use client";
 import Producto from "@/app/partial/model.producto";
-import { obtenerProducto } from "@/app/services/Producto";
+import { eliminarProducto, obtenerProducto } from "@/app/services/Producto";
 import React, { useEffect, useState } from "react";
 
 
@@ -16,10 +16,11 @@ export default function Home() {
       setProductosZona2(data);
     });
   }, []);
-  const eliminarProducto = (eliminarProducto: Producto) => {
-    //setCarrito ([eliminarProducto])
-    //console.log(nuevoProducto)
+  const  eliminarCamiseta = (productoId: number) => {
+    eliminarProducto(productoId);
+    window.location.reload();
   }
+
 
   return (
     <>
@@ -41,7 +42,7 @@ export default function Home() {
                 </h5>
                 <p className="card-text">{producto.descripcion}</p>
                 <h2>$15000</h2>
-                
+                <button className="eliminarProducto" onClick={() => { eliminarCamiseta(producto.productoId) }}>Eliminar Producto</button>
               </div>
             </a>
           ))}
@@ -59,7 +60,7 @@ export default function Home() {
                 </h5>
                 <p className="card-text">{producto.descripcion}</p>
                 <h2>$15000</h2>
-                
+                <button className="eliminarProducto" onClick={() => { eliminarCamiseta(producto.productoId) }}>Eliminar Producto</button>
               </div>
             </a>
           ))}
@@ -68,6 +69,5 @@ export default function Home() {
     </>
   );
 }
-//<button className="eliminarProducto" onClick={() => { eliminarProducto(productoID) }}>Eliminar Producto</button>
-//<button className="eliminarProducto" onClick={() => { eliminarProducto(productoID) }}>Eliminar Producto</button>
-//abajo de los precios
+
+

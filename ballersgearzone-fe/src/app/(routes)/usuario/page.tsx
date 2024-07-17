@@ -46,7 +46,7 @@ export default function Home() {
               <p className="card-text">{producto.descripcion}</p>
               <h2>$15000</h2>
               <Link href="/carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
-              <button className="btn btn-primary" onClick={ ()=> {agregarACarrito(producto)}}>Agregar a Carrito</button>
+              <button className="agregarACarrito" onClick={ ()=> {agregarACarrito(producto)}}>Agregar a Carrito</button>
             </div>
           </a>
         ))}
@@ -66,7 +66,7 @@ export default function Home() {
               <p className="card-text">{producto.descripcion}</p>
               <h2>$15000</h2>
               <Link href="/carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
-              <button className="btn btn-primary" onClick={ ()=> {agregarACarrito(producto)}}>Agregar a Carrito</button>
+              <button className="agregarACarrito" onClick={ ()=> {agregarACarrito(producto)}}>Agregar a Carrito</button>
             </div>
           </a>
 
