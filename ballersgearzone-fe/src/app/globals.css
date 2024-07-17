@@ -65,7 +65,7 @@ body{
   background-color: black;
   width: 100%;
   height: 150px;
-  color: red;
+  color: rgb(137, 0, 0);
   text-align: center;
   font-family: cursive;
   display: flex;
@@ -77,14 +77,14 @@ body{
   text-align: center;
   position: relative;
   top: 50px;
-  font-family: serif;
+  font-family: cursive;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .linea{
   background-color: black;
-  height: 586px;
+  height: 800px;
   width: 3px;
   right: 300px;
   
@@ -95,17 +95,25 @@ body{
   left: 1500px;
   width: 400px;
   text-align: center;
-  font-family: serif;
+  font-family: cursive;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .card{
-  width: 700px;
-  height: 570px;
+  width: 800px;
+  height: 800px;
  overflow: auto;
 }
+
+.eliminarProducto{
+width: 200px;
+background-color: rgb(113, 0, 0);
+font-family: cursive;
+color: black;
+}
+
 .footer{
   height: 200px;
   width: 100%;

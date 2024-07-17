@@ -38,7 +38,7 @@ export default function Home() {
       <div className="card">
         {productosZona1.map((producto) => (
           <a key={producto.productoId}>
-            <img src={producto.foto} className="card-img-top" height="500"alt={producto.equipo} />
+            <img src={producto.foto} className="card-img-top" height="600" width="200" alt={producto.equipo} />
             <div className="card-body">
               <h5 className="card-title">
                 {producto.equipo} {producto.camisetade}
@@ -56,9 +56,9 @@ export default function Home() {
     
       <div className="card"> 
         {productosZona2.map((producto) => (
-          <div className="diseñocard">
+
             <a key={producto.productoId}>
-            <img src={producto.foto} className="card-img-top" height="400" width="200" alt={producto.equipo} />
+            <img src={producto.foto} className="card-img-top" height="600" width="200" alt={producto.equipo} />
             <div className="card-body">
               <h5 className="card-title">   
                 {producto.equipo} {producto.camisetade}
@@ -69,7 +69,7 @@ export default function Home() {
               <button className="btn btn-primary" onClick={ ()=> {agregarACarrito(producto)}}>Agregar a Carrito</button>
             </div>
           </a>
-          </div>
+
         ))}
       </div>
       </div>
