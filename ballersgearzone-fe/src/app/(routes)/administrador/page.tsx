@@ -26,6 +26,7 @@ export default function Home() {
     <>
       <header>
         <h1 className="header">Ballers Gear Zone</h1>
+        <a href="/registroventas" className="registroDeVentas">Registro de Ventas</a>
       </header>
 
       
