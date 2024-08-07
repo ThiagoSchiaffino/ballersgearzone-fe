@@ -54,7 +54,7 @@ export default function Home() {
         await register (values)
         
   const navegarAUsuario = () => {
-    router.push("/usuario")
+    router.push("/paginausuario")
   }
 navegarAUsuario()
         console.log(values); // Aquí es donde los valores aparecerán en la consola
@@ -119,8 +119,8 @@ navegarAUsuario()
             />
             {formik.errors.password ? <div>{formik.errors.password}</div> : null}
 
-          <button type="submit" >Ingresar</button>
-          <button type="button" onClick={aregister}>
+            <button type="submit" className='boton-ingresar'>Ingresar</button>
+          <button type="button" className="boton-register" onClick={aregister} >
       Iniciar Sesion
     </button>
 

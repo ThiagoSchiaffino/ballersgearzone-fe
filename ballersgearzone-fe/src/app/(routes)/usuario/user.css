@@ -1,8 +1,0 @@
-.imagen1 {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; 
-  gap: 1rem; 
-  margin: 0 auto;
-  max-width: 1200px; 
-}

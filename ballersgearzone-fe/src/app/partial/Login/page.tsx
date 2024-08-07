@@ -40,11 +40,11 @@ export default function Home() {
             console.log(respuesta);
             console.log(respuesta.rolID);
             if (respuesta.rolID == 1){
-              router.push("/administrador")
+              router.push("/paginaadministrador")
             }
             else if(respuesta.rolID == 2)
               {
-              router.push("/usuario")
+              router.push("/paginausuario")
               }
           } catch (error) {
             // informar al usuario contraseña incorrecta
@@ -74,7 +74,7 @@ export default function Home() {
             />
             <ErrorMessage name="contraseña" component="div" />
 
-            <button type="submit">Ingresar</button>
+            <button type="submit" className='boton-ingresar'>Ingresar</button>
             <div>
               <button onClick={() => navegarARegister()} type='button' className="link">Registrarse</button>
             </div>

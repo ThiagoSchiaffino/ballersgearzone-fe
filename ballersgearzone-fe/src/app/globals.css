@@ -1,3 +1,74 @@
+.titulo-inicio{
+ margin-left: 600px;
+}
+
+
+.titulo-presentacion{
+  text-align: center;
+}
+
+.foto-tienda{
+  position: relative;
+  left: 620px;
+  width: 600px;
+  height: 400px;
+}
+
+.boton-iniciarsesion{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+  position: relative;
+  left: 500px;
+}
+
+.boton-registrarse{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+  position: relative;
+  left: 900px;
+}
+
+.boton-ingresar{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+}
+
+
+.link{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+}
+
+.boton-register{
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 50px;
+}
+
 form {
   position: relative;
   top: 70px;
@@ -7,6 +78,11 @@ form {
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
+}
+
+.error{
+  color: red;
+  background-color: red;
 }
 
 label {
@@ -24,43 +100,19 @@ input {
   box-sizing: border-box;
 }
 
-button {
-  width: 100%;
-  padding: 12px;
-  background-color: lightgray;
-  color: red;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: black;
-}
-
-div {
-  color: red;
-  margin-bottom: 16px;
-}
-
 /* main */
 body{
   background-color: white;
 }
-/*.card{
-  width: 800px;
-  height: 800px;
- overflow: auto;
-}*/
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el número de columnas según el espacio disponible */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: 10px; /* Espacio entre las tarjetas */
 }
 
 .card {
-  box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho y alto total de la tarjeta */
+  box-sizing: border-box; 
   border-color: black;
 }
 
@@ -80,13 +132,10 @@ a{
   height: 100%;
 }
 
-
-
 .logo{
   height: 400px;
   width: 300px;
 }
-
 
 .header-usuario{
   width: 100%;
@@ -105,9 +154,38 @@ a{
   align-items: center;
   font-family: sans-serif;
   top: 150px;
+  left: 200px;
 }
 
+.subtitulo-header{
+  color: white;
+  width: 400px;
+  height: 100px;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
 
+.mapa{
+  height: 390px;
+  width: 650px;
+  border-radius: 2px;
+  left: 500px;
+  position: relative;
+}
+
+.titulo-zona1{
+  color: black;
+  text-align: center;
+}
+
+.titulo-zona2{
+  color: black;
+  text-align: center;
+  font-weight: 500px;
+}
 
 .agregarACarrito{
   width: 200px;
@@ -137,16 +215,7 @@ color: white;
   display: flex;
 }
 
-/* carrito */
-/*body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}*/
+/*carrito*/
 
 .headerCarrito{
   width: 100%;

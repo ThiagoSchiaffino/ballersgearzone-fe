@@ -20,23 +20,17 @@ export default function Home() {
     eliminarProducto(productoId);
     window.location.reload();
   }
-
-
   return (
     <>
-      <header>
-        <h1 className="header">Ballers Gear Zone</h1>
-        <a href="/registroventas" className="registroDeVentas">Registro de Ventas</a>
-      </header>
-
-      
-
-      <h1 className="zonaEste">Zona Este</h1><h1 className="zonaOeste">Zona Oeste</h1>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div className="card">
-          {productosZona1.map((producto) => (
-            <a key={producto.productoId}>
-              <img src={producto.foto} className="card-img-top" height="600" width="200" alt={producto.equipo} />
+    <a href="/registroventas" className="registroDeVentas">Registro de Ventas</a>
+    <div className="titulo-zona1">
+        <h1>Conferencia Este</h1>
+      </div>
+      <div className="card-container">
+        {productosZona1.map((producto) => (
+          <div key={producto.productoId} className="card">
+            <a>
+              <img src={producto.foto} className="card-img-top" height="270" width="427" alt={producto.equipo} />
               <div className="card-body">
                 <h5 className="card-title">
                   {producto.equipo} {producto.camisetade}
@@ -46,15 +40,18 @@ export default function Home() {
                 <button className="eliminarProducto" onClick={() => { eliminarCamiseta(producto.productoId) }}>Eliminar Producto</button>
               </div>
             </a>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
 
-        <div className="linea"></div>
-
-        <div className="card">
-          {productosZona2.map((producto) => (
-            <a key={producto.productoId}>
-              <img src={producto.foto} className="card-img-top" height="600" width="200"   alt={producto.equipo} />
+      <div className="titulo-zona2">
+      <h1>Conferencia Oeste</h1>
+      </div>
+      <div className="card-container">
+        {productosZona2.map((producto) => (
+          <div key={producto.productoId} className="card">
+            <a>
+              <img src={producto.foto} className="card-img-top" height="270" width="427" alt={producto.equipo} />
               <div className="card-body">
                 <h5 className="card-title">
                   {producto.equipo} {producto.camisetade}
@@ -64,11 +61,9 @@ export default function Home() {
                 <button className="eliminarProducto" onClick={() => { eliminarCamiseta(producto.productoId) }}>Eliminar Producto</button>
               </div>
             </a>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </>
-  );
+  )
 }
-
-

@@ -29,7 +29,9 @@ export default function Home() {
   };
   return (
     <>
-      
+      <div className="titulo-zona1">
+        <h1>Conferencia Este</h1>
+      </div>
       <div className="card-container">
         {productosZona1.map((producto) => (
           <div key={producto.productoId} className="card">
@@ -49,6 +51,9 @@ export default function Home() {
         ))}
       </div>
 
+      <div className="titulo-zona2">
+      <h1>Conferencia Oeste</h1>
+      </div>
       <div className="card-container">
         {productosZona2.map((producto) => (
           <div key={producto.productoId} className="card">
