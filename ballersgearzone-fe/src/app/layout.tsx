@@ -28,16 +28,16 @@ export default function RootLayout({
       </header>
         {children}
       
-        <footer style={{ backgroundColor: 'black', color: 'white', padding: '20px', marginTop:'100px', width:"100%", height:"350px"}}>
+        <footer style={{ backgroundColor: 'black', color: 'white', padding: '20px', marginTop:'100px', width:"100%", height:"470px"}}>
           <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
             {/* Contacto */}
             <div style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
               <h3 style={{ marginBottom: '10px' }}>Contacto</h3>
-              <p>Email: ballersgearzone@gmail.com</p>
-              <p>Teléfono: 2284575131</p>
-              <p>Localidad: Olavarria</p>
-              <p>Dirección: Velez Sarsfield 3831</p>
-              <p>Instagram: Ballersgearzoneolav</p>
+              <p> <img src="gmail.png" alt=""  className="gmail"/> Gmail: ballersgearzone@gmail.com</p>
+              <p> <img src="telefono.png" alt=""  className="telefono"/> Teléfono: 2284575131</p>
+              <p> <img src="localidad.png" alt=""  className="localidad"/> Localidad: Olavarria</p>
+              <p> <img src="direccion.avif" alt=""  className="direccion"/>  Dirección: Velez Sarsfield 3831</p>
+              <p> <img src="instagram.png" alt=""  className="instagram"/> Instagram: Ballersgearzoneolav</p>
             </div>
 
             {/* Información */}
@@ -45,9 +45,9 @@ export default function RootLayout({
               <h3 style={{ marginBottom: '10px' }}>Información</h3>
               <ul style={{ listStyleType: 'none', padding: 0 }}>
                 <li><a href="/" style={{ color: 'white', textDecoration: 'none' }}>Sobre Nosotros</a></li>
-                <li><a href="/envios" style={{ color: 'white', textDecoration: 'none' }}>Envíos a todo el país</a></li>
-                <li><a href="/politica-privacidad" style={{ color: 'white', textDecoration: 'none' }}>Política de Privacidad</a></li>
-                <li><a href="/terminos-condiciones" style={{ color: 'white', textDecoration: 'none' }}>Términos y Condiciones</a></li>
+                <li><a href="" style={{ color: 'white', textDecoration: 'none' }}>Envíos a todo el país</a></li>
+                <li><a href="" style={{ color: 'white', textDecoration: 'none' }}>Política de Privacidad</a></li>
+                <li><a href="" style={{ color: 'white', textDecoration: 'none' }}>Términos y Condiciones</a></li>
               </ul>
             </div>
           </div>

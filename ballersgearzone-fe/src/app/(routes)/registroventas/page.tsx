@@ -11,6 +11,7 @@ export default function registroDeVentas() {
       //console.log(data)
       //setVenta(data);
     //})
+    //llamar al servicio registro de ventas. guardar el arregle de ventas en setVentas.
   }, [])
     
     

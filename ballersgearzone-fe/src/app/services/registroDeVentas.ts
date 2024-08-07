@@ -9,3 +9,4 @@ export const registroDeVentas= async (): Promise<any[]> => {
         return [];
     }
 };
+//crear servicio que recupere todas las ventas. (llamar al registro ventas backend)

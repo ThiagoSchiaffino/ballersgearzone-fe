@@ -73,7 +73,7 @@ navegarAUsuario()
             onChange={formik.handleChange}
             value={formik.values.firstName}
           />
-          {formik.errors.firstName ? <div>{formik.errors.firstName}</div> : null}
+          {formik.errors.firstName ? <div className='error'>{formik.errors.firstName}</div> : null}
 
           <label htmlFor="Edad">Edad</label>
           <input
@@ -84,7 +84,7 @@ navegarAUsuario()
             onChange={formik.handleChange}
             value={formik.values.edad}
           />
-          {formik.errors.edad ? <div>{formik.errors.edad}</div> : null}
+          {formik.errors.edad ? <div className='error'>{formik.errors.edad}</div> : null}
 
           <label htmlFor="email">Correo Electronico</label>
           <input
@@ -95,7 +95,7 @@ navegarAUsuario()
             onChange={formik.handleChange}
             value={formik.values.email}
           />
-          {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+          {formik.errors.email ? <div className='error'>{formik.errors.email}</div> : null}
 
           <label htmlFor="telefono">Numero de telefono</label>
           <input
@@ -106,7 +106,7 @@ navegarAUsuario()
             onChange={formik.handleChange}
             value={formik.values.telefono}
             />
-            {formik.errors.telefono ? <div>{formik.errors.telefono}</div> : null}
+            {formik.errors.telefono ? <div className='error'>{formik.errors.telefono}</div> : null}
 
             <label htmlFor="password">Contraseña</label>
           <input
@@ -117,7 +117,7 @@ navegarAUsuario()
             onChange={formik.handleChange}
             value={formik.values.password}
             />
-            {formik.errors.password ? <div>{formik.errors.password}</div> : null}
+            {formik.errors.password ? <div className='error'>{formik.errors.password}</div> : null}
 
             <button type="submit" className='boton-ingresar'>Ingresar</button>
           <button type="button" className="boton-register" onClick={aregister} >

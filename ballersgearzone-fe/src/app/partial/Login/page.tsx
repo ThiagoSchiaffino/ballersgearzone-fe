@@ -63,7 +63,7 @@ export default function Home() {
               type="email"
               placeholder='Email'
             />
-            <ErrorMessage name="email" component="div" />
+            <ErrorMessage name="email" component="div" className='error'/>
 
             <label htmlFor="contraseña">Contraseña</label>
             <Field
@@ -72,7 +72,7 @@ export default function Home() {
               type="password"
               placeholder='Contraseña'
             />
-            <ErrorMessage name="contraseña" component="div" />
+            <ErrorMessage name="contraseña" component="div" className='error'/>
 
             <button type="submit" className='boton-ingresar'>Ingresar</button>
             <div>
