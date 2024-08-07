@@ -59,7 +59,7 @@ div {
 
 /* main */
 body{
-  background-color: gray;
+  background-color: white;
 }
 .header{
   background-color: rgb(42, 41, 41);
@@ -103,11 +103,47 @@ body{
   align-items: center;
 }
 
-.card{
+/*.card{
   width: 800px;
   height: 800px;
  overflow: auto;
+}*/
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el número de columnas según el espacio disponible */
+  gap: 10px; /* Espacio entre las tarjetas */
 }
+
+.card {
+  box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho y alto total de la tarjeta */
+  border-color: black;
+}
+
+.card-title{
+  min-height: 70px;
+}
+
+.card-text{
+  min-height: 80px;
+}
+
+h5{
+  color: black;
+}
+
+a{
+  height: 100%;
+}
+
+
+
+.logo{
+  height: 400px;
+  width: 300px;
+}
+
+
 
 .agregarACarrito{
   width: 200px;
