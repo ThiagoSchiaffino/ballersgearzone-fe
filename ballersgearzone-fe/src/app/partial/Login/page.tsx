@@ -30,7 +30,6 @@ export default function Home() {
 
   return (
     <>
-      <div className='title'>Ballers Gear Zone</div>
       <Formik
         initialValues={{ email: '', contrasenia: '' }}
         validate={validate}

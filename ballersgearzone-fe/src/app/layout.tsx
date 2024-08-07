@@ -17,7 +17,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}
+      
+      <body className={inter.className}>
+      <header>
+        
+        <div className="header-usuario">
+          <img src="logoballersgearzone.jpg" alt="Ballers Gear Zone Logo" className="logo" />
+          <h1 className="titulo-header">Ballers Gear Zone</h1>
+</div>
+      </header>
+        {children}
+      
         <footer style={{ backgroundColor: '#333', color: 'white', padding: '20px', marginTop:'100px', width:"100%", height:"350px"}}>
           <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
             {/* Contacto */}
