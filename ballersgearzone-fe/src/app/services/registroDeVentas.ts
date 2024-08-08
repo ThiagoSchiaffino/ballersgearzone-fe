@@ -1,6 +1,7 @@
+import Venta from "../(routes)/registroventas/registro.model";
 import clienteAxios from "./axios";
 
-export const registroDeVentas= async (): Promise<any[]> => {
+export const registroVentas= async (): Promise<any[]> => {
     try {
         const response = await clienteAxios.get('/register');
         return response.data;

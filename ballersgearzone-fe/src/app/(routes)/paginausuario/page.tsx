@@ -21,6 +21,7 @@ export default function Home() {
   }, []);
   const agregarACarrito = (nuevoProducto: Producto) => {
     setCarrito([...carrito, nuevoProducto])
+    alert("Camiseta Agregada a Carrito")
     console.log(nuevoProducto)
   }
 

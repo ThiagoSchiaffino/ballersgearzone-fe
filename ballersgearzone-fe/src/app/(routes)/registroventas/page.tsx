@@ -1,33 +1,33 @@
 "use client"
 import { useEffect, useState } from "react"
 import Venta from "./registro.model";
+import { registroVentas } from "@/app/services/registroDeVentas";
 
 
 export default function registroDeVentas() {
 
     const [venta, setVenta] = useState<Venta[]>([]);
   useEffect(() => {
-    //registroDeVentas().then((data: Venta[]) => {
-      //console.log(data)
-      //setVenta(data);
-    //})
-    //llamar al servicio registro de ventas. guardar el arregle de ventas en setVentas.
+    registroVentas().then((data: Venta[]) => {
+      console.log(data)
+      setVenta(data);
+    })
+    
   }, [])
     
-    
+    //llamar al servicio registro de ventas. guardar el arreglo de ventas en setVentas.
     return (
         <>
-   <table>
+   <table className="registroVentas">
         <thead>
           <tr>
-            <th>ID COMPRA</th>
-            <th>ID CLIENTE</th>
-            <th>CLIENTE</th>
-            <th>EMAIL</th>
-            <th>FECHA</th>
-            <th>ID PRODUCTO</th>
-            <th>MODELO</th>
-            <th>PRECIO</th>
+            <th>Venta ID</th>
+            <th>Usuario Id</th>
+            <th>Camiseta de</th>
+            <th>Email</th>
+            <th>Equipo</th>
+            <th>Fecha</th>
+            <th>Precio</th>
           </tr>
         </thead>
         <tbody>
