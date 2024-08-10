@@ -18,6 +18,7 @@ export default function registroDeVentas() {
     //llamar al servicio registro de ventas. guardar el arreglo de ventas en setVentas.
     return (
         <>
+        <h1 className="registro">Registro de Ventas</h1>
    <table className="registroVentas">
         <thead>
           <tr>

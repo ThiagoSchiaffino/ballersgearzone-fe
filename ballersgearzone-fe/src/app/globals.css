@@ -320,3 +320,50 @@ padding-top: 5px;
   font-weight: bold;
   margin-top: 40px;
 }
+
+.registro{
+  text-align: center;
+  justify-content: center;
+}
+
+.registroVentas {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1.2em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.registroVentas thead {
+  background-color: #343a40;
+  color: #ffffff;
+  text-align: left;
+}
+
+.registroVentas th,
+.registroVentas td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.registroVentas th {
+  background-color: #4b4b4b;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.registroVentas td {
+  border-bottom: 1px solid #ddd;
+}
+
+.registroVentas td:last-child {
+  font-weight: bold;
+  color: #bd4141;
+}
+
+.registroVentas tr:last-child td {
+  border-bottom: none;
+}
