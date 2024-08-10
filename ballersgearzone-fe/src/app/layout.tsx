@@ -28,16 +28,16 @@ export default function RootLayout({
       </header>
         {children}
       
-        <footer style={{ backgroundColor: 'black', color: 'white', padding: '20px', marginTop:'100px', width:"100%", height:"470px"}}>
+        <footer style={{ backgroundColor: 'black', color: 'white', padding: '20px', marginTop:'100px', width:"100%", height:"480px"}}>
           <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
             {/* Contacto */}
             <div style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
               <h3 style={{ marginBottom: '10px' }}>Contacto</h3>
-              <p> <img src="gmail.png" alt=""  className="gmail"/> Gmail: ballersgearzone@gmail.com</p>
-              <p> <img src="telefono.png" alt=""  className="telefono"/> Teléfono: 2284575131</p>
-              <p> <img src="localidad.png" alt=""  className="localidad"/> Localidad: Olavarria</p>
-              <p> <img src="direccion.avif" alt=""  className="direccion"/>  Dirección: Velez Sarsfield 3831</p>
-              <p> <img src="instagram.png" alt=""  className="instagram"/> Instagram: Ballersgearzoneolav</p>
+              <a href="https://www.google.com/intl/es-419/gmail/about/"> <img src="gmail.png" alt=""  className="gmail"/> Gmail: ballersgearzone@gmail.com</a><br></br><br></br>
+              <a href="https://web.whatsapp.com"> <img src="telefono.png" alt=""  className="telefono"/> Teléfono: 2284575131</a><br></br><br></br>
+              <a href="https://www.google.com/maps/place/Olavarría,+Provincia+de+Buenos+Aires/@-36.859582,-60.3696013,12z/data=!3m1!4b1!4m6!3m5!1s0x959445daae9e90a3:0xd11aadb313dbf072!8m2!3d-36.8937167!4d-60.3233499!16zL20vMGJfeTl5?entry=ttu"> <img src="localidad.png" alt=""  className="localidad"/> Localidad: Olavarria</a><br></br><br></br>
+              <a href="https://www.google.com/maps/place/Dorrego+2584,+B7400+Olavarría,+Provincia+de+Buenos+Aires/@-36.8910858,-60.3253,17z/data=!3m1!4b1!4m5!3m4!1s0x959445c6c1635785:0xb65d0f0c2ae7c80d!8m2!3d-36.8910858!4d-60.3227197?entry=ttu"> <img src="direccion.avif" alt=""  className="direccion" />  Dirección: Dorrego 2584</a><br></br><br></br>
+              <a href="https://www.instagram.com"> <img src="instagram.png" alt="" className="instagram"/> Instagram: Ballersgearzoneolav</a>
             </div>
 
             {/* Información */}

@@ -50,17 +50,16 @@ export default function Home() {
     <Formik
       initialValues={{ firstName: '', edad: 0, email: '', telefono: +54, password: ''}}
       validate={validate}
-      onSubmit={ async (values, actions) => {
-        await register (values)
-        
-  const navegarAUsuario = () => {
-    router.push("/paginausuario")
-  }
-navegarAUsuario()
-        console.log(values); // Aquí es donde los valores aparecerán en la consola
-        actions.setSubmitting(false); // Para terminar la operación de envío
+      onSubmit={ async (body, actions) => {
+          if (await register(body)){
+            router.push("/paginausuario")}
+            else {
+              alert("Error, No Podes Crear un Usuario Con un Email en Uso")
+            }
+        actions.setSubmitting(false); 
       }}
     >
+        
       {formik => (
         <form onSubmit={formik.handleSubmit}>
           <h1 className='titulo'>Registrarse</h1> 

@@ -27,6 +27,8 @@ export default function Home() {
 
   const irACarrito = () => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    
   };
   return (
     <>
@@ -34,23 +36,33 @@ export default function Home() {
         <h1>Conferencia Este</h1>
       </div>
       <div className="card-container">
-        {productosZona1.map((producto) => (
-          <div key={producto.productoId} className="card">
-            <a>
-              <img src={producto.foto} className="card-img-top" height="270" width="427" alt={producto.equipo} />
-              <div className="card-body">
-                <h5 className="card-title">
-                  {producto.equipo} {producto.camisetade}
-                </h5>
-                <p className="card-text">{producto.descripcion}</p>
-                <h2>$15000</h2>
-                <Link href="/carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
-                <button className="agregarACarrito" onClick={() => { agregarACarrito(producto) }}>Agregar a Carrito</button>
-              </div>
-            </a>
-          </div>
-        ))}
-      </div>
+  {productosZona1.map((producto) => (
+    <div key={producto.productoId} className="card">
+      <a>
+        <img src={producto.foto} className="card-img-top" height="270" width="427" alt={producto.equipo} />
+        <div className="card-body">
+          <h5 className="card-title">
+            {producto.equipo} {producto.camisetade}
+          </h5>
+          <p className="card-text">{producto.descripcion}</p>
+          <h2>$15000</h2>
+          <select className="talle"
+            id={`talle-${producto.productoId}`}
+          >
+            <option value="">Seleccione un talle</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+          <Link href="/carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
+          <button className="agregarACarrito" onClick={() => agregarACarrito(producto)}>Agregar a Carrito</button>
+        </div>
+      </a>
+    </div>
+  ))}
+</div>
+
 
       <div className="titulo-zona2">
       <h1>Conferencia Oeste</h1>
@@ -66,6 +78,15 @@ export default function Home() {
                 </h5>
                 <p className="card-text">{producto.descripcion}</p>
                 <h2>$15000</h2>
+                <select className="talle"
+            id={`talle-${producto.productoId}`}
+          >
+            <option value="">Seleccione un talle</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
                 <Link href="/carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
                 <button className="agregarACarrito" onClick={() => { agregarACarrito(producto) }}>Agregar a Carrito</button>
               </div>
@@ -73,8 +94,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-
-
     </>
   );
 }

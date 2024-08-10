@@ -38,7 +38,7 @@ export default function registroDeVentas() {
               <td>{venta.camisetade}</td>
               <td>{venta.email}</td>
               <td>{venta.equipo}</td>
-              <td>{venta.fecha}</td>
+              <td>{(new Date(venta.fecha)).toLocaleDateString() }</td>
               <td>{venta.precio}</td>
             </tr>
           ))}
