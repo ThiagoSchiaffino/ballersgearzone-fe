@@ -1,25 +1,42 @@
-"use client"
-import { useEffect, useState } from "react"
+"use client";
+import { useEffect, useState } from "react";
 import Venta from "./registro.model";
 import { registroVentas } from "@/app/services/registroDeVentas";
+import { jsPDF } from 'jspdf';
+import autoTable from 'jspdf-autotable';
 
+export default function RegistroDeVentas() {
 
-export default function registroDeVentas() {
+  const [venta, setVenta] = useState<Venta[]>([]);
 
-    const [venta, setVenta] = useState<Venta[]>([]);
   useEffect(() => {
     registroVentas().then((data: Venta[]) => {
-      console.log(data)
+      console.log(data);
       setVenta(data);
-    })
-    
-  }, [])
-    
-    //llamar al servicio registro de ventas. guardar el arreglo de ventas en setVentas.
-    return (
-        <>
-        <h1 className="registro">Registro de Ventas</h1>
-   <table className="registroVentas">
+    });
+  }, []);
+
+  const generarPDF = () => {
+    const doc = new jsPDF() as jsPDF & { autoTable: typeof autoTable };
+    autoTable(doc, {
+      head: [['ID VENTA', 'ID USUARIO', 'CAMISETADE', 'EMAIL', 'EQUIPO', 'FECHA', 'PRECIO']],
+      body: venta.map(v => [
+        v.ventaID,  // Corrected from venta.ventaId to venta.ventaID
+        v.usuarioID,
+        v.camisetade,
+        v.email,
+        v.equipo,
+        (new Date(v.fecha)).toLocaleString(),
+        v.precio,
+      ]),
+    });
+    doc.save('registro_ventas.pdf');
+  };
+
+  return (
+    <>
+      <h1 className="registro">Registro de Ventas</h1>
+      <table className="registroVentas">
         <thead>
           <tr>
             <th>Venta ID</th>
@@ -32,20 +49,22 @@ export default function registroDeVentas() {
           </tr>
         </thead>
         <tbody>
-        {venta.map((venta, index) => (
+          {venta.map((v, index) => (
             <tr key={index}>
-              <td>{venta.ventaID}</td>
-              <td>{venta.usuarioID}</td>
-              <td>{venta.camisetade}</td>
-              <td>{venta.email}</td>
-              <td>{venta.equipo}</td>
-              <td>{(new Date(venta.fecha)).toLocaleDateString() }</td>
-              <td>{venta.precio}</td>
+              <td>{v.ventaID}</td>
+              <td>{v.usuarioID}</td>
+              <td>{v.camisetade}</td>
+              <td>{v.email}</td>
+              <td>{v.equipo}</td>
+              <td>{(new Date(v.fecha)).toLocaleDateString()}</td>
+              <td>{v.precio}</td>
             </tr>
           ))}
-
         </tbody>
       </table>
-</>
-    );
+      <button onClick={generarPDF} className="exportar">
+        Exportar a PDF
+      </button>
+    </>
+  );
 }
