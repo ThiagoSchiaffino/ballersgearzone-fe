@@ -1,4 +1,4 @@
-import Venta from "../(routes)/registroventas/registro.model";
+import Venta from "../models/registro.model";
 import clienteAxios from "./axios";
 
 export const registroVentas= async (): Promise<any[]> => {

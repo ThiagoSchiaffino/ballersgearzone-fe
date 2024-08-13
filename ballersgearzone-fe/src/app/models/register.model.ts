@@ -1,4 +1,4 @@
-interface Register {
+interface IRegister {
     firstName: string;
     edad: number;
     email: string;
@@ -6,4 +6,4 @@ interface Register {
     password: string;
   }
   
-  export default Register
+  export default IRegister

@@ -1,5 +1,5 @@
 "use client";
-import Producto from "@/app/partial/model.producto";
+import Producto from "@/app/models/model.producto";
 import React, { useEffect, useState } from "react";
 
 export default function Carrito() {

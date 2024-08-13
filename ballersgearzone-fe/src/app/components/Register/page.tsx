@@ -1,16 +1,16 @@
 "use client";
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import Register from '../../partial/register.model';
+import IRegister from '@/app/models/register.model';
 import { useRouter } from 'next/navigation';
-import { register } from '../../services/auth';
+import { register } from '@/app/services/auth';
 
-export default function Home() {
+export default function Register() {
   const router = useRouter();   
   const aregister = () => {
-    router.push('Login')
+    router.push('/home/Login')
   }
-  const validate = (values: Register) => {
+  const validate = (values: IRegister) => {
     const errors: Partial<{firstName : string, edad: string, email: string, telefono: string, password: string}> = {};
     if (!values.firstName) {
       errors.firstName = 'Nombre requerido';
@@ -52,7 +52,7 @@ export default function Home() {
       validate={validate}
       onSubmit={ async (body, actions) => {
           if (await register(body)){
-            router.push("/paginausuario")}
+            router.push("/components/paginausu")}
             else {
               alert("Error, No Podes Crear un Usuario Con un Email en Uso")
             }

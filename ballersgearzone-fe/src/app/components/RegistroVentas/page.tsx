@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import Venta from "./registro.model";
+import Venta from "../../models/registro.model";
 import { registroVentas } from "@/app/services/registroDeVentas";
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';

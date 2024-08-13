@@ -2,13 +2,13 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useRouter } from 'next/navigation';
-import Login from './login.model';
+import Login from '../../models/login.model';
 import {login} from '../../services/auth';
 
 export default function Home() {
   const router = useRouter();
   const navegarARegister = () => {
-    router.push("/register")
+    router.push("/components/Register")
   }
 
   const validate = (values: Login) => {
@@ -40,11 +40,11 @@ export default function Home() {
             console.log(respuesta);
             console.log(respuesta.rolID);
             if (respuesta.rolID == 1){
-              router.push("/paginaadministrador")
+              router.push("/administrador/paginaadministrador")
             }
             else if(respuesta.rolID == 2)
               {
-              router.push("/paginausuario")
+              router.push("/usuario/paginausuario")
               }
           } catch (error) {
             // informar al usuario contraseña incorrecta

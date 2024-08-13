@@ -1,10 +1,10 @@
 "use client"
-import Login from "../../partial/Login/page"
+import Register from "@/app/components/Register/page"
 
 export default function Home() {
   return (<>
 
-    <Login />
+    <Register />
  
   </>
   )

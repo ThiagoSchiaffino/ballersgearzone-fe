@@ -1,12 +1,12 @@
 "use client";
-import Producto from "@/app/partial/model.producto";
+import Producto from "@/app/models/model.producto";
 import { obtenerProducto } from "@/app/services/Producto";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 
 
-export default function Home() {
+export default function PaginaUsuario() {
   const [productosZona1, setProductosZona1] = useState<Producto[]>([]);
   const [productosZona2, setProductosZona2] = useState<Producto[]>([]);
   const [carrito, setCarrito] = useState<Producto[]>([]);
@@ -55,7 +55,7 @@ export default function Home() {
             <option value="L">L</option>
             <option value="XL">XL</option>
           </select>
-          <Link href="/carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
+          <Link href="/components/Carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
           <button className="agregarACarrito" onClick={() => agregarACarrito(producto)}>Agregar a Carrito</button>
         </div>
       </a>
@@ -87,7 +87,7 @@ export default function Home() {
             <option value="L">L</option>
             <option value="XL">XL</option>
           </select>
-                <Link href="/carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
+                <Link href="/components/Carrito" className="btn btn-primary" onClick={irACarrito}>Ir al Carrito</Link>
                 <button className="agregarACarrito" onClick={() => { agregarACarrito(producto) }}>Agregar a Carrito</button>
               </div>
             </a>

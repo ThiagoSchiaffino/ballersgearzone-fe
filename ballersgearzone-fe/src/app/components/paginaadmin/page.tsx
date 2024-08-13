@@ -1,11 +1,11 @@
 "use client";
-import Producto from "@/app/partial/model.producto";
+import Producto from "@/app/models/model.producto";
 import { eliminarProducto, obtenerProducto } from "@/app/services/Producto";
 import React, { useEffect, useState } from "react";
 
 
 
-export default function Home() {
+export default function PaginaAdmin () {
   const [productosZona1, setProductosZona1] = useState<Producto[]>([]);
   const [productosZona2, setProductosZona2] = useState<Producto[]>([]);
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Home() {
   }
   return (
     <>
-    <a href="/registroventas" className="registroDeVentas">Registro de Ventas</a>
+    <a href="/components/RegistroVentas" className="registroDeVentas">Registro de Ventas</a>
     <div className="titulo-zona1">
         <h1>Conferencia Este</h1>
       </div>

@@ -1,6 +1,6 @@
 import clienteAxios from "./axios";
-import Login from "../partial/Login/login.model";
-import Register from "../partial/register.model";
+import Login from "../models/login.model";
+import Register from "../models/register.model";
 
 export const login = async (login: Login, router: any) => {
     try{

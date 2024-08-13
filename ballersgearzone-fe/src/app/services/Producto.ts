@@ -1,4 +1,4 @@
-import Producto from "../partial/model.producto";
+import Producto from "../models/model.producto";
 import clienteAxios from "./axios";
 
 export const obtenerProducto = async (zona: number): Promise<Producto[]> => {
